@@ -1,0 +1,18 @@
+{
+    "name": "Python",
+    "image": "registry.gitlab.com/mu-bd-ce/devcontainers/python:latest",
+    // Command to run after the container is created to set up the environment.
+    "postCreateCommand": "create_env ${containerEnv:CONTAINER_STORE}/venv",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                // Path to the Python interpreter in the virtual environment.
+                "python.defaultInterpreterPath": "${containerEnv:CONTAINER_STORE}/venv/bin/python"
+            },
+            "extensions": [
+                // VS Code extension for Jupyter support. Requires the `ipykernel` package.
+                "ms-toolsai.jupyter"
+            ]
+        }
+    }
+}
